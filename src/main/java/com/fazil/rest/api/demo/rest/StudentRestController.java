@@ -3,6 +3,7 @@ package com.fazil.rest.api.demo.rest;
 import com.fazil.rest.api.demo.entity.Student;
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +28,10 @@ public class StudentRestController {
     @GetMapping("/students")
     public List<Student> studentList(){
         return theStudents;
+    }
+
+    @GetMapping("/student/{studentId}")
+    public Student getStudent(@PathVariable int studentId){
+        return theStudents.get(studentId);
     }
 }
