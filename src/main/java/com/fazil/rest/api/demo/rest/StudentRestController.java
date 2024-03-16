@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/test")
-public class StudentController {
+public class StudentRestController {
     @GetMapping("/students")
     public List<Student> studentList(){
         List<Student> theStudents = new ArrayList<>();
